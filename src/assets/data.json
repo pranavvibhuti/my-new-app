@@ -1,0 +1,17 @@
+[
+    {
+        "make": "Hundai",
+        "model": "I10",
+        "price": 35000
+    },
+    {
+        "make": "Ford",
+        "model": "Eco-Sport",
+        "price": 32000
+    },
+    {
+        "make": "Suzuki",
+        "model": "Swift",
+        "price": 72000
+    }
+]
