@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AllCommunityModules } from '@ag-grid-community/all-modules';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { AllCommunityModules } from '@ag-grid-community/all-modules';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  gridApi: any;
+  columnApi: any;
+
   columnDefs = [
     {
       headerName: 'Make',
@@ -30,4 +34,26 @@ export class AppComponent {
   ];
 
   modules = AllCommunityModules;
+
+  constructor(private http: HttpClient) {
+
+  }
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.columnApi = params.columnApi;
+  }
+
+  onGetData() {
+    this.http.get('../assets/data.json').subscribe(data => {
+      this.gridApi.setRowData([]);
+      const newData = data;
+      this.gridApi.updateRowData({ add: newData });
+    });
+  }
+
+  onClearData() {
+    this.gridApi.setRowData([]);
+  }
+
 }

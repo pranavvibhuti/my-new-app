@@ -3,5 +3,10 @@
     class="ag-theme-balham"
     [rowData]="rowData" 
     [columnDefs]="columnDefs"
-    [modules]="modules">
+    [modules]="modules"
+    (gridReady)="onGridReady($event)">
 </ag-grid-angular>
+<div class="example-button-row">
+    <button mat-raised-button (click)="onGetData()">Get data</button>
+    <button mat-raised-button (click)="onClearData()">Clear</button>
+</div>
