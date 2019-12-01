@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AllCommunityModules } from '@ag-grid-community/all-modules';
 import { HttpClient } from '@angular/common/http';
+import { CellCustomComponent } from './cell-custom/cell-custom.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent {
       headerName: 'Make',
       field: 'make',
       tooltipField: 'make',
+      cellRendererFramework: CellCustomComponent,
     },
     {
       headerName: 'Model',

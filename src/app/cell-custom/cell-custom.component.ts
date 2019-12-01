@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CellCustomComponent implements OnInit {
 
+  data: any;
+
   constructor() { }
+
+  agInit(params) {
+    this.data = params.value;
+    console.log(this.data);
+  }
 
   ngOnInit() {
   }

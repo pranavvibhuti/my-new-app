@@ -12,8 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    CellCustomComponent
+    CellCustomComponent,
   ],
+  entryComponents: [CellCustomComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
